@@ -19,17 +19,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String COL_2 = "NAME" ;
 
     public DataBaseHelper(Context context){
-        super(context, DATABASE_NAME, null, 13);
+        super(context, DATABASE_NAME, null, 15);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL("CREATE TABLE " +TABLE_NAME+ " ( ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT ); ");
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
+        onCreate(db);
     }
 
     public boolean insertData(String name){
@@ -49,10 +50,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public Cursor getAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("Select * from " +TABLE_NAME, null);
+        Cursor res = db.rawQuery("SELECT * FROM " +TABLE_NAME+";", null);
         return res ;
     }
-
-
 
 }

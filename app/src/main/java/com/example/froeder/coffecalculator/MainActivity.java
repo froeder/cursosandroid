@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         txtCafe = (EditText) findViewById(R.id.txtCafe);
         txtCodigo = (EditText) findViewById(R.id.txtCodigo);
         txtBanco = (TextView) findViewById(R.id.textViewBanco);
+        txtTeste = (TextView) findViewById(R.id.txtTeste);
         btnClick = (Button) findViewById(R.id.btnCalcular);
         btnClickLer = (Button) findViewById(R.id.btnLer) ;
         btnClick.setOnClickListener(new View.OnClickListener(){
@@ -45,9 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void ClickMe(){
         String textoCafe = txtCafe.getText().toString();
-        int cafe = Integer.parseInt(textoCafe);
-        //txtTeste.setText(getText(cafe));
-        Boolean result = myDb.insertData(textoCafe);
+        String textoCodigo = txtCodigo.getText().toString();
+        float cafe = Integer.parseInt(textoCafe);
+        float codigo = Integer.parseInt(textoCodigo);
+        float resultado = (codigo / cafe) ;
+        String resultadoBanco = String.valueOf(resultado);
+        txtTeste.setText(String.valueOf(resultadoBanco));
+        Boolean result = myDb.insertData(resultadoBanco);
         if(result == true){
             Toast.makeText(MainActivity.this, "Dado inserido" , Toast.LENGTH_SHORT).show();
         }else {

@@ -65,25 +65,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/btnCalcular"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="77dp">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textViewBanco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/textViewBanco"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/textView2"
-                android:layout_alignRight="@+id/textView2"
-                android:layout_below="@+id/btnCalcular"
-                android:layout_marginTop="25dp"
-                android:text="TextView" />
-
-        </LinearLayout>
+            android:layout_alignEnd="@+id/textView2"
+            android:layout_alignRight="@+id/textView2"
+            android:layout_below="@+id/btnCalcular"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="25dp"
+            android:text="TextView" />
     </ScrollView>
 
     <Button
@@ -94,7 +88,9 @@
         android:layout_alignStart="@+id/btnCalcular"
         android:layout_below="@+id/btnCalcular"
         android:layout_marginTop="11dp"
-        android:text="Ler" />
+        android:text="Ler"
+        android:layout_alignRight="@+id/btnCalcular"
+        android:layout_alignEnd="@+id/btnCalcular" />
 
     <TextView
         android:id="@+id/txtTeste"
